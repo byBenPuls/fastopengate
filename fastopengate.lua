@@ -5,7 +5,7 @@ require 'lib.moonloader'
 local vkeys = require "vkeys"
 local ini = require "inicfg"
 local nCfg = "FastOpenGate.ini"
-local cfg = ini.load({opengate = { lock = false }}, nCfg)
+local cfg = ini.load({opengate = { lock = true }}, nCfg)
 local cmd_opengate = { [VK_H] = '/opengate' }
 
 function main()
