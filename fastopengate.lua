@@ -14,11 +14,11 @@ function main()
         sampAddChatMessage("{58c9b1}[FastOpenGate by Ben Puls] {ffffff}my cmds: /gateinfo, /gate", -1)
         print("Has been started by Ben Puls")
         sampRegisterChatCommand("gate", function()
-		    cfg.opengate.lock = not cfg.opengate.lock
-	        if ini.save(cfg, nCfg) then
-		        sampAddChatMessage("{58c9b1}[FastOpenGate] " .. (cfg.opengate.lock and "{AAFFAA}ON" or "{FFAAAA}OFF"), 0xEEEEEE)
-		    end
-	    end)
+		cfg.opengate.lock = not cfg.opengate.lock
+		if ini.save(cfg, nCfg) then
+			sampAddChatMessage("{58c9b1}[FastOpenGate] " .. (cfg.opengate.lock and "{AAFFAA}ON" or "{FFAAAA}OFF"), 0xEEEEEE)
+		end
+	end)
         sampRegisterChatCommand("gateinfo", function ()
             sampShowDialog(6405, 'FastOpenGate by Ben Puls', 'FastOpenGate: ' .. (cfg.opengate.lock and "{AAFFAA}ON" or "{FFAAAA}OFF")..'\n\n\n{FFFFFF}Fast open gates on button H', 'Close', '', DIALOG_STYLE_MSGBOX)
         end)
